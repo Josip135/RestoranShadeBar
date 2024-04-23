@@ -1,0 +1,106 @@
+<%- include('partials/header2.ejs'); -%>
+
+<div class="box">
+  <h1>Recenzije 2</h1>
+</div>
+
+<div class="box">
+  <% for(let recenzija of listaRecenzija){%>
+    <div class="item">
+      <form action="/delete" method="POST">
+        <input type="checkbox" onchange="this.form.submit()" name="izbrisiRecenziju" value="<%= recenzija.id %>">
+      </form>
+  
+      <div>
+        <p class="recenzija" id="tekst<%= recenzija.id %>">
+          <%= recenzija.tekst %>
+        </p>
+
+        <form class="edit" action="/edit" method="POST">
+          <input type="hidden" name="ID" value="<%= recenzija.id %>">
+          <input class="izmjena" id="unosTeksta<%= recenzija.id %>" type="text" name="prepravljenTekst" value="<%= recenzija.tekst %>" autocomplete="off" autofocus="true" hidden="true" >
+          <button id="gotovTekst<%= recenzija.id %>" class="edit" type="submit" hidden> 
+            <img class="icon" src="/icons/checksolid.svg" alt="checkmark">
+          </button>
+        </form>
+
+        <p class="imekorisnika" id="tekst2<%= recenzija.id %>">
+          <%= recenzija.username %>
+        </p>
+      </div>
+
+      <button id="editTekst<%= recenzija.id %>" class="edit" onclick="handler('<%= recenzija.id %>')"><img class="icon" src="/icons/pencilsolid.svg" alt="izmjena">
+      </button>
+
+      <div class="ocjena">
+        <p id="ocjena<%= recenzija.id %>">
+          <%= recenzija.ocjena %> / 5
+        </p>
+        <form class="edit" action="/editocjena" method="POST">
+          <input type="hidden" name="ID" value="<%= recenzija.id %>">
+          <input class="izmjena2" id="unosOcjena<%= recenzija.id %>" type="text" name="prepravljenaOcjena" value="<%= recenzija.ocjena %>" autocomplete="off" autofocus="true" hidden="true" >
+          <button id="gotovaOcjena<%= recenzija.id %>" class="edit" type="submit" hidden> 
+            <img class="icon" src="/icons/checksolid.svg" alt="checkmark">
+          </button>
+
+          
+        </form>
+      </div>
+
+      <button id="editOcjena<%= recenzija.id %>" class="edit2" onclick="handler('<%= recenzija.id %>')"><img class="icon" src="/icons/pencilsolid.svg" alt="izmjena">
+      </button>      
+    </div>
+  <%}%>
+
+  <div class="item2">
+    <input class="dodaj" type="text" name="novaRecenzija" placeholder="Dodajte recenziju" autocomplete="off">
+    <button type="submit" name="list" id="prikazRecenzijaBoxa">+</button>
+  </div>
+</div>
+
+<div class="recenzija-box">
+  <form class="forma" id="addItemForm" action="/dodajrecenziju" method="post">
+    
+    <input type="" class="form-control" name="tekst" id="ticket-form-tekst" placeholder="Tekst"  required="">
+
+    <input type="" name="ocjena" id="ticket-form-ocjena" class="form-control" pattern="[1-5]"placeholder="Ocjena" required>
+
+    
+    <button type="submit" class="btn btn-outline-primary" id="recenzijabutton">Ostavi recenziju</button>
+  </form>
+</div>
+
+<form action="/logout" method="post">
+  <button type="submit" class="btn btn-primary" id="LogOut">Log out</button>
+</form>
+
+
+
+<script>
+  
+  function handler(id) {
+      document.getElementById("tekst" + id).setAttribute("hidden", true)
+      document.getElementById("editTekst" + id).setAttribute("hidden", true)
+      document.getElementById("editOcjena" + id).setAttribute("hidden", true)
+      
+      document.getElementById("gotovTekst" + id).removeAttribute("hidden")
+      document.getElementById("gotovaOcjena" + id).removeAttribute("hidden")
+      document.getElementById("unosTeksta" + id).removeAttribute("hidden")
+      document.getElementById("unosOcjena" + id).removeAttribute("hidden")
+    }
+  
+  var prikazBoxa = document.getElementById("prikazRecenzijaBoxa");
+  var recenzijaBox = document.querySelector(".recenzija-box");
+
+  prikazBoxa.addEventListener("click", function(){
+    if(recenzijaBox.style.display === "none" || recenzijaBox.style.display === ""){
+      recenzijaBox.style.display = "block";
+    }else{
+      recenzijaBox.style.display = "none";
+    }
+  });
+
+  
+  </script>
+
+<%- include('partials/footer.ejs'); -%>

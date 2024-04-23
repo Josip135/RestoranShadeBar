@@ -1,0 +1,73 @@
+<%- include('partials/header.ejs'); -%>
+
+<div class="box">
+  <h1>Recenzije</h1>
+</div>
+<div class="box" >
+
+  
+  <% for(let recenzija of listaRecenzija){%>
+    <div class="item">
+      <img  class="korisnik" src="slike/User.png" alt="">
+  
+      <div>
+        <p class="recenzija" id="tekst<%= recenzija.id %>">
+          <%= recenzija.tekst %>
+        </p>
+
+        <form class="edit" action="/edit" method="POST">
+          <input type="hidden" name="prepravljenID" value="<%= recenzija.id %>">
+          <input class="izmjena" id="unosTeksta<%= recenzija.id %>" type="text" name="prepravljenTekst" value="<%= recenzija.tekst %>" autocomplete="off" autofocus="true" hidden="true" >
+          <button id="gotovTekst<%= recenzija.id %>" class="edit" type="submit" hidden> 
+            <img class="icon" src="/icons/checksolid.svg" alt="checkmark">
+          </button>
+          
+        </form>
+        <p class="imekorisnika" id="tekst2<%= recenzija.id %>">
+          <%= recenzija.username %>
+        </p>
+      </div>
+
+      
+
+      <div class="ocjena">
+        <p id="ocjena<%= recenzija.id %>">
+          <%= recenzija.ocjena %> / 5
+        </p>
+        <form class="edit" action="/editocjena" method="POST">
+          <input type="hidden" name="prepravljenID" value="<%= recenzija.id %>">
+          <input class="izmjena2" id="unosOcjena<%= recenzija.id %>" type="text" name="prepravljenaOcjena" value="<%= recenzija.ocjena %>" autocomplete="off" autofocus="true" hidden="true" >
+          <button id="gotovaOcjena<%= recenzija.id %>" class="edit" type="submit" hidden> 
+            <img class="icon" src="/icons/checksolid.svg" alt="checkmark">
+          </button>
+
+          
+        </form>
+      </div>
+
+      
+    
+    </div>
+  <%}%>
+  
+  
+  <form class="form" id="addItemForm" action="" method="">
+    <p>Potrebni registracija ili log in za stavljanje ili izmjenu recenzije</p>
+  </form>       
+</div>
+
+<button type="button" class="btn btn-primary" id="PrikazReg">Registracija</button>
+
+<button type="button" class="btn btn-light" id="PrikazLog">Log in</button>
+
+<script>
+  document.getElementById('PrikazReg').addEventListener('click', function() {
+      window.location.href = '/register';
+  });
+
+  document.getElementById('PrikazLog').addEventListener('click', function() {
+      window.location.href = '/login';
+  });
+  </script>
+
+<%- include('partials/footer.ejs'); -%>

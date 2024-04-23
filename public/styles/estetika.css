@@ -1,0 +1,322 @@
+h1,
+p,
+a,
+footer,
+form {
+  font-family: 'Roboto';
+}
+
+h1 {
+  padding: 12px;
+  color: rgb(136, 206, 250);
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+p {
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+main {
+  text-align: center;
+  flex: 1 0 auto;
+  display: block;
+}
+
+.slika {
+  margin: auto;
+  padding-top: 30px;
+  width: 200px;
+}
+
+.section-heading {
+  font-size: 2.8rem;
+  line-height: 1.5;
+}
+
+.container-fluid {
+  padding: 3% 15% 3% 15%;
+}
+
+.navbar {
+  margin-bottom: -50px;
+}
+
+.korisnik {
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+
+.ikonica,
+.navbar-toggler,
+.navbar-brand,
+.nav-link,
+footer {
+  color: rgb(94, 185, 245);
+}
+
+.ikonica:hover {
+  color: white;
+}
+
+
+
+.navbar-brand {
+  font-family: 'Roboto';
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+#heading {
+  text-align: center;
+  background-color: rgb(40, 234, 248);
+}
+
+
+body {
+  background-color: rgb(170, 255, 251);
+}
+
+
+input {
+  margin: 20px;
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: rgb(33, 187, 248);
+}
+
+input[type="text"] {
+  text-align: center;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+
+.box,
+.box2,
+.boxmeni,
+.recenzija-box,
+.registracija-box,
+.login-box {
+  max-width: 500px;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px;
+  background-color: rgb(255, 255, 255);
+}
+
+.box2 {
+  margin-top: 80px;
+}
+
+.boxmeni {
+  margin-bottom: 100px;
+}
+
+.recenzija-box,
+.login-box,
+.registracija-box {
+  padding-right: 50px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  margin-bottom: 90px;
+}
+
+.recenzija-box {
+  display: none;
+}
+
+.login-box,
+.registracija-box {
+  margin-top: 80px;
+}
+
+.recenzija-box {
+  margin-top: 80px;
+}
+
+
+.cijena,
+.imekorisnika {
+  font-size: smaller;
+  margin-top: -30px;
+}
+
+.ocjena {
+  margin-top: -20px;
+  margin-left: 150px;
+}
+
+.hrana,
+.hrana2,
+.hrana3,
+.hrana4 {
+  height: 120px;
+  width: 180px;
+  padding: 5px 5px 5px 5px;
+}
+
+.pica,
+.pica2 {
+  padding: 5px 5px 5px 5px;
+  height: 240px;
+  width: 130px;
+}
+
+.pica {
+  margin-left: 200px;
+}
+
+.pica2 {
+  margin-left: 210px;
+}
+
+.pica3 {
+  padding: 5px 5px 5px 5px;
+  height: 240px;
+  width: 160px;
+  margin-left: 165px;
+}
+
+.hrana {
+  margin-left: 127px;
+}
+
+.hrana2 {
+  margin-left: 156px;
+}
+
+.hrana3 {
+  margin-left: 176px;
+}
+
+.hrana4 {
+  margin-left: 116px;
+}
+
+#carouselExample {
+  margin-bottom: 80px;
+}
+
+.carousel-inner img {
+  width: 800px;
+  /* You can adjust the width as needed */
+  height: 600px;
+  /* Maintain the aspect ratio */
+}
+
+.item,
+.form,
+.item2 {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+.video {
+  height: 500px;
+  padding: 10px;
+}
+
+
+button[name="list"] {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  background-color: rgb(40, 234, 248);
+  font-weight: bold;
+  border-style: hidden;
+  margin-right: 20px;
+  color: White;
+  font-size: 30px;
+}
+
+button[name="list"]:hover {
+  background-color: rgb(94, 185, 245);
+}
+
+.karta {
+  padding: 20px;
+}
+
+.loginlink {
+  text-decoration: none;
+  color: white;
+}
+
+.forma {
+  padding-top: 30px;
+}
+
+#PrikazReg {
+  margin-right: 20px;
+}
+
+.icon {
+  height: 20px;
+}
+
+.edit2,
+.edit {
+  margin-left: 5px;
+  border: none;
+  background: none;
+}
+
+.edit {
+  margin-bottom: 25px;
+}
+
+.edit2 {
+  margin-bottom: 35px;
+}
+
+#LogOut {
+  margin-top: 30px;
+}
+
+.akcije {
+  margin-bottom: 35px;
+}
+
+.izmjena,
+.izmjena2 {
+  width: 90px;
+  height: 30px;
+}
+
+.dodaj {
+  width: 360px;
+  height: 60px;
+}
